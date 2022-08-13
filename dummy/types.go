@@ -1,9 +1,9 @@
 package main
 
-type Session interface {
+type SessionChecker interface {
 	hasExpired() bool
 }
 
-type User interface {
+type UserDetailsRetriever interface {
 	getDetails()
 }

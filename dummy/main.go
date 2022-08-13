@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func GetUserDetails(session Session, user User) error {
+func GetUserDetails(session SessionChecker, user UserDetailsRetriever) error {
 	if session.hasExpired() {
 		return fmt.Errorf("Session has expired.")
 	}
