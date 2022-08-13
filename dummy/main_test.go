@@ -1,13 +1,15 @@
 package main
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestIfSessionHasExpiredAnErrorIsReturned(t *testing.T) {
 	expiredSession := &ExpiredSessionStub{}
 	dummyUser := &DummyUser{}
 
 	err := GetUserDetails(expiredSession, dummyUser)
-	if err == nil {
-		t.FailNow()
-	}
+	assert.NotNil(t, err)
 }
