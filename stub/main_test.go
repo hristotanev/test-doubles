@@ -1,16 +1,14 @@
 package main
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestAuthorizerReturnsUserCredentials(t *testing.T) {
 	authoriser := &AuthoriserStub{}
 	credentials := GetUserCredentials(authoriser)
-
-	if credentials.GetUsername() != "test username" {
-		t.FailNow()
-	}
-
-	if credentials.GetPassword() != "test password" {
-		t.FailNow()
-	}
+	assert.Equal(t, credentials.GetUsername(), "test username")
+	assert.Equal(t, credentials.GetPassword(), "test password")
 }
