@@ -1,7 +1,7 @@
 package main
 
-type ExpiredSession struct{}
+type ExpiredSessionStub struct{}
 
-func (session *ExpiredSession) hasExpired() bool {
+func (session *ExpiredSessionStub) hasExpired() bool {
 	return true
 }
